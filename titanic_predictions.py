@@ -35,12 +35,12 @@ accuracy_score(y_s, y_p)
 c_GNB = GaussianNB()
 y_p = c_GNB.fit(X_t, y_t).predict(X_s)
 f1_score(y_s, y_p)
-y_predict = c_RT.fit(X_train, y_train).predict(X_test)
+y_predict = c_DT.fit(X_train, y_train).predict(X_test)
 
 #Submission
 submission = pd.DataFrame({
         "PassengerId": test["PassengerId"],
         "Survived": y_predict
     })
-submission.to_csv('C:\\Users\\maksim.lebedev\\Desktop\\MachineLearning\\Kaggle\\Titanic\\submission7.csv', 
+submission.to_csv('C:\\Users\\maksim.lebedev\\Desktop\\MachineLearning\\Kaggle\\Titanic\\submission8.csv', 
                   index = False)
