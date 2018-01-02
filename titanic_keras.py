@@ -8,7 +8,7 @@ def prep_submission(y_pred, file_name):
     submission = pd.DataFrame({
             "PassengerID": test["PassengerId"],
             "Survived": y_pred[:, 0]})
-    submission.to_csv('C:\\Users\\maksim.lebedev\\Desktop\\MachineLearning\\Kaggle\\Titanic\\'+file_name,
+    submission.to_csv('..\\'+file_name,
                       index = False)
 X = np.array(X_train)
 y = np.array(y_train.to_frame())
@@ -24,5 +24,5 @@ model.compile(optimizer = "adam",
               metrics=["accuracy"])
 model.fit(x = X, y = y, epochs = 3000, batch_size=16)
 y_pred = model.predict_classes(x = np.array(X_test), batch_size=16)
-prep_submission(y_pred, 'submission_nn_keras_851.csv')
+prep_submission(y_pred, 'submission_nn_keras.csv')
 
